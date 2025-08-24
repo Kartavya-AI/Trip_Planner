@@ -6,5 +6,4 @@ langserve
 fastapi
 uvicorn
 pydantic
-os
 duckduckgo-search
