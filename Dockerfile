@@ -23,9 +23,5 @@ COPY . .
 # Expose port for Cloud Run (8080 is mandatory)
 EXPOSE 8080
 
-# Streamlit-specific: change default port
-ENV STREAMLIT_SERVER_PORT=8080
-ENV STREAMLIT_SERVER_HEADLESS=true
-
-# Command to run the app
-CMD ["streamlit", "run", "app.py"]
+# Run FastAPI with Uvicorn
+CMD ["uvicorn", "main:fastapi_app", "--host", "0.0.0.0", "--port", "8080"]

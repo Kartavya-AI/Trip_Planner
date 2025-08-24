@@ -71,16 +71,16 @@ def itinerary_node(state: dict) -> dict:
     destination = state["destination"]
     travel_date = state["travel_date"]
     days = state["days"]
-    interests = state.get("interests") or "Not specified (default: general sightseeing & leisure)"
-    acc_budget = state.get("accommodation_budget") or "Not specified (default: budget-friendly)"
-    dietary = state.get("dietary_preferences") or "Not specified (default: no preference)"
-    food_budget = state.get("food_budget") or "Not specified (default: medium-level budget)"
+    interests = state.get("interests") or "General sightseeing & leisure"
+    acc_budget = state.get("accommodation_budget") or "Budget-friendly"
+    dietary = state.get("dietary_preferences") or "No specific preference"
+    food_budget = state.get("food_budget") or "Medium-level budget"
 
 
     prompt = f"""
     You are a professional travel planner.  
 
-    First, summarize the **Traveler Preferences** clearly:
+    Use the following traveler preferences (defaults are already filled in if missing):
     - Interests: {interests}
     - Accommodation Budget: {acc_budget}
     - Dietary Preferences: {dietary}
